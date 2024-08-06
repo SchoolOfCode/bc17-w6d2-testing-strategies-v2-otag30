@@ -1,6 +1,7 @@
 # Equivalence Partitioning Exercise
 
 ## Introduction
+
 Hey there, fellow testers! Today, we're diving into the world of equivalence partitioning, a super useful technique in software testing. But before we get our hands dirty with some practical exercises, let's take a moment to understand what equivalence partitioning is all about and why it's such a valuable tool in our testing toolkit.
 
 Imagine you're testing a system that takes various inputs, like age, email, or password. Now, you could go crazy and test every single possible value for each input, but let's be real, that would take forever! 😫 This is where equivalence partitioning comes to the rescue! 🦸‍♀️
@@ -20,12 +21,14 @@ Now, you might be thinking, "Why bother with all this equivalence class stuff? C
 Like any technique, equivalence partitioning has its strengths and limitations. Let's take a quick look at the pros and cons:
 
 ✅ Pros:
+
 - Reduces the number of test cases needed
 - Helps identify defects related to input handling
 - Provides a structured approach to test case design
 - Improves test coverage and efficiency
 
 ❌ Cons:
+
 - Requires a good understanding of the system's requirements and input domain
 - May miss defects that occur due to specific combinations of inputs
 - Relies on the tester's judgment in selecting representative values
@@ -34,10 +37,13 @@ Like any technique, equivalence partitioning has its strengths and limitations. 
 Alright, now that we've covered the basics, it's time to put equivalence partitioning into action! Roll up your sleeves, grab your favorite testing hat, and let's get started! 🧢✨
 
 ## Objective
+
 In this exercise, you will practice applying the equivalence partitioning technique to identify valid and invalid equivalence classes for input fields in a registration form.
 
 ## Scenario
+
 You are tasked with testing a registration form that has the following input fields:
+
 - Age: The valid age range is between 18 and 120 (inclusive).
 - Email: The email should be in a valid format (e.g., user@domain.com).
 - Password: The password should be between 8 and 20 characters (inclusive) and contain at least one uppercase letter, one lowercase letter, and one digit.
@@ -45,37 +51,46 @@ You are tasked with testing a registration form that has the following input fie
 ## Instructions
 
 ### Task 1: Identify Equivalence Classes for Age
+
 1. Identify the valid equivalence classes for the Age field.
 2. Identify the invalid equivalence classes for the Age field.
 3. Fill in the table below with the identified equivalence classes.
 
-| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
-| Age         |                           |                            |
+| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes              |
+| ----------- | ------------------------- | ---------------------------------------- |
+| Age         | 18, 50, 100, 120          | <18, >120, null, text, fractional, 0, -1 |
 
 ### Task 2: Identify Equivalence Classes for Email
+
 1. Identify the valid equivalence classes for the Email field.
 2. Identify the invalid equivalence classes for the Email field.
 3. Fill in the table below with the identified equivalence classes.
 
 | Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
-| Email       |                           |                            |
+| ----------- | ------------------------- | --------------------------- |
+| Email       | user@domain.com           | user.domain.com             |
+|             | user@domain.co.uk         | userdomain.com, user@domain |
+|             |                           | null, text, user@.com       |
 
 ### Task 3: Identify Equivalence Classes for Password
+
 1. Identify the valid equivalence classes for the Password field.
 2. Identify the invalid equivalence classes for the Password field.
 3. Fill in the table below with the identified equivalence classes.
 
-| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
-| Password    |                           |                            |
+| Input Field | Valid Equivalence Classes                             | Invalid Equivalence Classes                              |
+| ----------- | ----------------------------------------------------- | -------------------------------------------------------- |
+| Password    | 8 characters (1 digit one upper case one lower case)  | <8 characters, > 20 characters, no upper case, no digit, |
+|             | 20 characters (1 digit one upper case one lower case) | no lower case, null, all digites, all lowercase          |
+|             | 15 characters (1 digit one upper case one lower case) | all uppercase                                            |
 
 ### Task 4: Discuss and Share
+
 1. Discuss your findings with your group.
 2. Be prepared to share your approach and results with the class.
 
 ## Considerations
+
 - Think about the possible valid and invalid values for each input field.
 - Consider the boundary values and any specific format requirements.
 - Remember that equivalence partitioning helps in reducing the number of test cases while still covering the important scenarios.
@@ -84,18 +99,21 @@ You are tasked with testing a registration form that has the following input fie
   <summary>Click here to see the answers</summary>
 
 ### Task 1: Identify Equivalence Classes for Age
-| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
+
+| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes                |
+| ----------- | ------------------------- | ------------------------------------------ |
 | Age         | - 18 to 120               | - Below 18<br>- Above 120<br>- Non-numeric |
 
 ### Task 2: Identify Equivalence Classes for Email
-| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
+
+| Input Field | Valid Equivalence Classes                    | Invalid Equivalence Classes                                    |
+| ----------- | -------------------------------------------- | -------------------------------------------------------------- |
 | Email       | - Valid email format (e.g., user@domain.com) | - Missing @ symbol<br>- Missing domain<br>- Invalid characters |
 
 ### Task 3: Identify Equivalence Classes for Password
-| Input Field | Valid Equivalence Classes | Invalid Equivalence Classes |
-|-------------|---------------------------|----------------------------|
+
+| Input Field | Valid Equivalence Classes                                                                             | Invalid Equivalence Classes                                                                 |
+| ----------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Password    | - 8 to 20 characters<br>- Contains at least one uppercase letter, one lowercase letter, and one digit | - Less than 8 characters<br>- More than 20 characters<br>- Missing required character types |
 
 </details>
